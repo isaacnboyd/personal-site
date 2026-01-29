@@ -14,18 +14,20 @@ This is a hub for AI agents and automation tools working with the al-folio repos
 
 ## Essential Commands
 
-### Local Development (Docker)
+### Local Development (Bundle/Jekyll)
 
 ```bash
 # Initial setup & start dev server
-docker compose pull && docker compose up
-# Site runs at http://localhost:8080
+bundle install
+pip install jupyter
+bundle exec jekyll serve
+# Site runs at http://localhost:4000
 
-# Rebuild with updated dependencies
-docker compose up --build
+# Rebuild after dependency updates
+bundle update --all
 
-# Stop containers
-docker compose down
+# Stop server
+# Press Ctrl+C in the terminal
 ```
 
 ### Pre-Commit Checklist
@@ -36,10 +38,11 @@ npm install --save-dev prettier @shopify/prettier-plugin-liquid  # (first time o
 npx prettier . --write
 
 # 2. Build locally
-docker compose up --build
+bundle exec jekyll build
 
 # 3. Verify site
-# → Visit http://localhost:8080 and check navigation, pages, images, dark mode
+bundle exec jekyll serve
+# → Visit http://localhost:4000 and check navigation, pages, images, dark mode
 
 # 4. Commit with clear message
 git add .
