@@ -183,7 +183,7 @@ The agent is designed to be patient and helpful, explaining each step clearly so
 **The customization agent can make mistakes or produce incorrect information.** Always review and verify the agent's suggestions and changes before applying them to your repository:
 
 - **Review all changes** – Before applying any modifications, carefully read what the agent suggests and ensure it makes sense for your needs
-- **Test locally first** – Before pushing changes to GitHub, test them locally using Docker or native setup (see the [Installation instructions](INSTALL.md))
+- **Test locally first** – Before pushing changes to GitHub, test them locally using Bundle/Jekyll (see the [Installation instructions](INSTALL.md))
 - **Check syntax** – Make sure any YAML, Markdown, or BibTeX files have correct syntax. Incorrect syntax can break your website
 - **Verify configuration** – If the agent modifies `_config.yml` or other configuration files, check that the changes align with your intentions
 - **Preview on your site** – Run your site locally and navigate through it to ensure everything displays correctly and works as expected
@@ -282,7 +282,6 @@ Understanding al-folio's technology stack will help you better customize and ext
   - **Citation updates**: Automatically fetches citation counts from Google Scholar
 
 - **GitHub Pages**: Free hosting for your static website built by Jekyll
-- **Docker**: Optional containerization for local development (provides a consistent environment across different machines)
 - **Prettier**: Code formatter for Markdown, YAML, and Liquid files to maintain consistent formatting
 
 ### Key Integration Points

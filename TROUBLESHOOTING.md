@@ -10,7 +10,6 @@ This guide covers common issues and their solutions. For more information, see [
     - [Custom domain becomes blank after deployment](#custom-domain-becomes-blank-after-deployment)
     - [GitHub Actions: "Unknown tag 'toc'" error](#github-actions-unknown-tag-toc-error)
   - [Local Build Issues](#local-build-issues)
-    - [Docker build fails](#docker-build-fails)
     - [Ruby dependency issues](#ruby-dependency-issues)
     - [Port already in use](#port-already-in-use)
   - [Styling &amp; Layout Problems](#styling--layout-problems)
@@ -86,25 +85,6 @@ This guide covers common issues and their solutions. For more information, see [
 
 ## Local Build Issues
 
-### Docker build fails
-
-**Problem:** `docker compose up` fails or shows errors.
-
-**Solution:**
-
-1. Update Docker: `docker compose pull`
-2. Rebuild: `docker compose up --build`
-3. If still failing, check your system resources (disk space, RAM)
-4. For M1/M2 Mac users, verify you're using a compatible Docker version
-5. Check Docker Desktop is running
-
-**For permission issues:**
-
-- Linux users may need to add your user to the docker group: `sudo usermod -aG docker $USER`
-- Then log out and log back in
-
----
-
 ### Ruby dependency issues
 
 **Problem:** `Gemfile.lock` conflicts or bundle errors.
@@ -122,14 +102,7 @@ This guide covers common issues and their solutions. For more information, see [
 
 **Problem:** "Address already in use" when running `jekyll serve`.
 
-**Solution - Docker:**
-
-```bash
-docker compose down  # Stop the running container
-docker compose up    # Start fresh
-```
-
-**Solution - Local Ruby:**
+**Solution:**
 
 ```bash
 # Find and kill the Jekyll process
